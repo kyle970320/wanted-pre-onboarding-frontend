@@ -1,0 +1,61 @@
+.todo {
+  box-sizing: border-box;
+  position: absolute;
+  z-index: 1;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding: 50px;
+  background-color: #f7ea5e;
+  box-shadow: 0 0 30px rgba(0, 0, 0, 0.7);
+}
+.todo p {
+  text-align: center;
+  width: 100%;
+}
+.todo ul {
+  width: 100%;
+}
+.todo .addInput {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+.todo .signOut {
+  position: absolute;
+  top: 0px;
+  right: -100px;
+  border: none;
+  background-color: #ffcc03;
+  padding: 1%;
+  transition: box-shadow 0.5s;
+}
+.todo .signOut:hover {
+  cursor: pointer;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.8);
+}
+.todo .line {
+  width: 100%;
+  margin: 20px 0;
+}
+
+.box {
+  display: flex;
+  justify-content: end;
+  align-items: center;
+}
+.box b {
+  display: inline-block;
+  width: 30px;
+  height: 30px;
+  background-color: lightblue;
+}
+.box i {
+  display: inline-block;
+  width: 30px;
+  height: 30px;
+  background-color: lightcoral;
+}

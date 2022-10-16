@@ -29,11 +29,6 @@ table{
 select,textarea,input{
   box-sizing: border-box;
 }
-button{
-  border:none;
-  background: none;
-  cursor: pointer;
-}
 iframe,fieldset{
   border:none;
 }

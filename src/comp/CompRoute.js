@@ -1,8 +1,8 @@
 import React, { useState, useEffect, createContext } from 'react';
 import { Route, Routes, useLocation, useNavigate } from 'react-router-dom';
-import SignIn from './auth/SignIn';
-import SignUp from './auth/SignUp';
-import ToDoList from './todo/ToDoList';
+import SignIn from './auth/signin/SignIn';
+import SignUp from './auth/signUp/SignUp';
+import ToDoList from './todo/todo/Todo';
 
 export const AppContext = createContext()
 
@@ -12,12 +12,11 @@ const CompRoute = () => {
   const navigate = useNavigate();
   const localStorageToken = window.localStorage.getItem('userToken');
   let location = useLocation()
-  console.log('my token : ' + localStorageToken)
 
   useEffect(()=>{
     if (localStorageToken && (location.pathname === '/')) {
-      navigate('/todolist')
-    } else if (!localStorageToken && (location.pathname === '/todolist')) {
+      navigate('/todo')
+    } else if (!localStorageToken && (location.pathname === '/todo')) {
       alert('로그인 정보가 없으므로 로그인페이지로 이동합니다.');
       window.location.href = '/'
     }
@@ -29,7 +28,7 @@ const CompRoute = () => {
       <Routes>
         <Route path='/' element={<SignIn />}></Route>
         <Route path='/signup' element={<SignUp />}></Route>
-        <Route path='/todolist' element={<ToDoList />}></Route>
+        <Route path='/todo' element={<ToDoList />}></Route>
       </Routes>
     </AppContext.Provider>
   );

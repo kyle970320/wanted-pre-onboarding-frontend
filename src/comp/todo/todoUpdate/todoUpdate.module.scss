@@ -1,0 +1,37 @@
+.update{
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 500px;
+  height: 200px;
+  background-color: #BBB;
+
+  >*{
+    margin-right: 10px;
+  }
+  input[type='checkbox']{
+      -webkit-appearance: none;
+      -moz-appearance: none;
+      appearance: none;
+      width: 30px;
+      height: 30px;
+      background-color: lightcoral;
+      &:checked{
+        background-color: lightblue;
+      }
+  }
+}
+.fade{ animation: 0.7s ease-in-out loadEffect1; }
+
+@keyframes loadEffect1 {
+    0%{
+        opacity: 0;
+    }
+    100%{
+        opacity: 1;
+    }
+}

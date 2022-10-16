@@ -1,0 +1,37 @@
+.form {
+  box-sizing: border-box;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding: 50px;
+  width: 500px;
+  height: 400px;
+  background-color: #f7ea5e;
+  box-shadow: 0 0 30px rgba(0, 0, 0, 0.7);
+}
+.form p {
+  width: 100%;
+}
+.form p input {
+  width: 100%;
+}
+.form p.btn {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.errorMessage {
+  display: block;
+  height: 30px;
+  color: red;
+}
+
+.title {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
