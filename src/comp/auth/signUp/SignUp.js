@@ -12,6 +12,7 @@ const CompSignUp = () => {
   const signUpEmail = useRef();
   const signUpPassword = useRef();
 
+    /* 유효성검사 */
   const fnGetUserLogin = () => {
     if ((emailRegExp.test(signUpEmail.current.value)) && passwordRegExp.test(signUpPassword.current.value)) {
       setDisabled('abled')
@@ -24,6 +25,7 @@ const CompSignUp = () => {
     setPasswordError('유효하지 않은 비밀번호입니다.') : setPasswordError(null);
   }
 
+    /* 회원가입 결과에 따른 라우팅처리 */
   const SignUpHandler = async(e)=>{
     e.preventDefault();
     let SignUpInfo = await SignUp(signUpEmail.current.value, signUpPassword.current.value)

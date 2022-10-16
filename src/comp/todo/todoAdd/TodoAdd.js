@@ -9,6 +9,7 @@ const CompAdd = () => {
 
   const localStorageToken = window.localStorage.getItem('userToken');
 
+    /* 추가 함수 */
   const addListHandler = async () => {
     await createTodo(localStorageToken, addInput.current.value)
     let allList = await getTodos(localStorageToken)

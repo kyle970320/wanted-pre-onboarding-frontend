@@ -11,12 +11,14 @@ const CompToDoList = () => {
   let { stateGetList, setGetList } = useContext(AppContext)
   const navigate = useNavigate()
 
+    /* 로그아웃 구현 */
   const signOutHandler = () => {
     window.localStorage.removeItem('userToken');
     alert('정상적으로 로그아웃 되었습니다');
     navigate('/')
   }
 
+    /* 비동기 처리를 위해 useEffect 안에서 함수 선언 후 바로 호출 */
   useEffect(() => {
     const getList = async (token) => {
       let listItem = await getTodos(token);

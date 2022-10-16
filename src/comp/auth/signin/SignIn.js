@@ -23,6 +23,7 @@ const CompSignIn = () => {
     }
   }, [])
 
+  /* 유효성검사 */
   const fnGetUserLogin = () => {
     if ((emailRegExp.test(userEmail.current.value)) && passwordRegExp.test(userPassword.current.value)) {
       setDisabled('abled')
@@ -36,7 +37,7 @@ const CompSignIn = () => {
   }
 
 
-
+  /* 토큰정보 해당 리스트 가져오기 */
   const SignInHandler = async (e) => {
     e.preventDefault();
     let token = await SignIn(userEmail.current.value, userPassword.current.value)
