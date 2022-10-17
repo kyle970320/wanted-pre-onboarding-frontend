@@ -6,7 +6,7 @@ import style from './todoListItem.module.css'
 
 const CompList = ({ data }) => {
   const localStorageToken = window.localStorage.getItem('userToken');
-  let { id, isCompleted, todo, userId } = data;
+  let { id, isCompleted, todo } = data;
   let { setGetList } = useContext(AppContext);
   let [stateUpdate, setUpdate] = useState(false);
   let [stateCompleted, setCompleted] = useState(isCompleted)

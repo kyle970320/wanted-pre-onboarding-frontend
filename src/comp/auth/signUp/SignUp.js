@@ -6,18 +6,18 @@ import style from '../signin/signIn.module.css'
 
 const CompSignUp = () => {
   const navigate = useNavigate()
-  const [stateDisabled, setDisabled] = useState('')
-  const [stateEmailError, setEmailError] = useState(null)
-  const [statePasswordError, setPasswordError] = useState(null)
+  const [stateDisabled, setDisabled] = useState('');
+  const [stateEmailError, setEmailError] = useState(null);
+  const [statePasswordError, setPasswordError] = useState(null);
   const signUpEmail = useRef();
   const signUpPassword = useRef();
 
     /* 유효성검사 */
   const fnGetUserLogin = () => {
     if ((emailRegExp.test(signUpEmail.current.value)) && passwordRegExp.test(signUpPassword.current.value)) {
-      setDisabled('abled')
+      setDisabled('abled');
     } else {
-      setDisabled('')
+      setDisabled('');
     }
     !(emailRegExp.test(signUpEmail.current.value))&&(Boolean(signUpEmail.current.value)!=false) ? 
     setEmailError('유효하지 않은 이메일입니다.') : setEmailError(null);
@@ -30,8 +30,8 @@ const CompSignUp = () => {
     e.preventDefault();
     let SignUpInfo = await SignUp(signUpEmail.current.value, signUpPassword.current.value)
     if(SignUpInfo){
-      navigate('/')
-    }else{
+      navigate('/');
+    }else{ //잘못된 정보를 입력했을때, 다시 입력할 수 있게 입력창을 비워줌
       signUpEmail.current.value = '';
       signUpPassword.current.value = '';
     }
@@ -39,7 +39,7 @@ const CompSignUp = () => {
 
   const backToSignInHandler = (e)=>{
     e.preventDefault();
-    navigate('/')
+    navigate('/');
   }
   return (
     <form className={style.form}>

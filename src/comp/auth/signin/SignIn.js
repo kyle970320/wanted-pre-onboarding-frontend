@@ -6,11 +6,11 @@ import style from './signIn.module.css'
 import { emailRegExp, passwordRegExp } from '../../hooks/regExp';
 
 const CompSignIn = () => {
-  const { setGetList } = useContext(AppContext)
-  const navigate = useNavigate()
-  const [stateDisabled, setDisabled] = useState('')
-  const [stateEmailError, setEmailError] = useState(null)
-  const [statePasswordError, setPasswordError] = useState(null)
+  const { setGetList } = useContext(AppContext);
+  const navigate = useNavigate();
+  const [stateDisabled, setDisabled] = useState('');
+  const [stateEmailError, setEmailError] = useState(null);
+  const [statePasswordError, setPasswordError] = useState(null);
   const localStorageToken = window.localStorage.getItem('userToken');
   let location = useLocation();
   let userEmail = useRef();
@@ -18,17 +18,17 @@ const CompSignIn = () => {
 
   useEffect(() => {
     if (localStorageToken && (location.pathname === '/')) {
-      alert('로그인 정보가 감지되었습니다\n todolist로 이동합니다.')
-      navigate('/todo')
+      alert('로그인 정보가 감지되었습니다\n todolist로 이동합니다.');
+      navigate('/todo');
     }
   }, [])
 
   /* 유효성검사 */
   const fnGetUserLogin = () => {
     if ((emailRegExp.test(userEmail.current.value)) && passwordRegExp.test(userPassword.current.value)) {
-      setDisabled('abled')
+      setDisabled('abled');
     } else {
-      setDisabled('')
+      setDisabled('');
     }
     !(emailRegExp.test(userEmail.current.value))&&(Boolean(userEmail.current.value)!=false) ? 
     setEmailError('유효하지 않은 이메일입니다.') : setEmailError(null);
@@ -41,14 +41,14 @@ const CompSignIn = () => {
   const SignInHandler = async (e) => {
     e.preventDefault();
     let token = await SignIn(userEmail.current.value, userPassword.current.value)
-    setDisabled('')
+    setDisabled('');
     const getList = async (token) => {
       let listItem = await getTodos(token);
       setGetList(listItem);
     }
     getList(token);
     if (token) {
-      navigate('/todo')
+      navigate('/todo');
     } else {
       userEmail.current.value = '';
       userPassword.current.value = '';
@@ -57,7 +57,7 @@ const CompSignIn = () => {
 
   const AuthHandler = (e) => {
     e.preventDefault();
-    navigate('/signup')
+    navigate('/signup');
   }
 
   return (

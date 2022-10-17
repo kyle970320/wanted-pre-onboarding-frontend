@@ -17,10 +17,10 @@ const SignUp = (email, password) => {
       .then(response => response.json())
       .then(response => {
         if (response.access_token) {
-          alert('회원가입이 완료되었습니다')
+          alert('회원가입이 완료되었습니다');
         }
         else {
-          alert('이미 존재하는 이메일입니다')
+          alert('이미 존재하는 이메일입니다');
         }
         resolve(response.access_token)
       })
@@ -44,12 +44,12 @@ const SignIn = (email, password) => {
       .then(response => {
         if (response.access_token) {
           localStorage.setItem('userToken', response.access_token);
-          alert('환영합니다! 일정표 작성으로 이동합니다.')
+          alert('환영합니다! 일정표 작성으로 이동합니다.');
         }
         else {
-          alert('잘못된 정보입니다. 다시 입력하세요')
+          alert('잘못된 정보입니다. 다시 입력하세요');
         }
-        resolve(response.access_token)
+        resolve(response.access_token);
       })
   })
 }
@@ -65,7 +65,7 @@ const getTodos = (Token)=>{
     })
       .then(response => response.json())
       .then(response => {
-        resolve(response)
+        resolve(response);
       })
   })
 }
@@ -85,7 +85,7 @@ const createTodo = (Token, title) => {
     }) 
       .then(response => response.json())
       .then(response => {
-        resolve(response)
+        resolve(response);
       })
   })
 }
@@ -100,7 +100,7 @@ const deleteTodo = (Token, id) => {
       },
     }) 
       .then(response => {
-        resolve(response)
+        resolve(response);
       })
   })
 }
@@ -121,7 +121,7 @@ const updateTodo = (Token, id, title, Completed) => {
     }) 
       .then(response => response.json())
       .then(response => {
-        resolve(response)
+        resolve(response);
       })
   })
 }

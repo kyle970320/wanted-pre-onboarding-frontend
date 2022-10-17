@@ -39,8 +39,8 @@ const CompToDoList = () => {
       </p>
       <img className={style.line} src={`${process.env.PUBLIC_URL}/img/line-dashed.png`} alt="" />
       <ul>
-        {
-          stateGetList && stateGetList.map((data) => {
+        {//비어있거나 오류가 들어온 error가 들어온 값은 map이 실행되지 않음
+          Array.isArray(stateGetList) && stateGetList.map((data) => {
             return (
               <TodoListItem data={data} key={data.id} />
             )
