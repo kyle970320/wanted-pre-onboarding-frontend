@@ -47,7 +47,7 @@ const CompToDoList = () => {
           })
         }
       </ul>
-      <span className={style.box}><b></b>:완료 / <i></i>:미완료</span>
+      <span className={style.box}><b></b>:완료 / <i></i>:미완료&#40;클릭으로 변경&#41;</span>
     </div>
   );
 };
