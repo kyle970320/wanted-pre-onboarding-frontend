@@ -4,7 +4,7 @@
 해당 레파지토리는 프리온보딩 프론트엔드 코스 사전과제 제출용입니다.
 코드 데모버전은 영상대신 링크로 제출하겠습니다.
 
-[:eyes:데모링크](https://kyle970320.github.io/preon/)
+[:eyes:데모링크](https://main--vocal-puffpuff-82abf9.netlify.app/)
 [:full_moon_with_face:블로그 링크](https://blog.naver.com/zkdlf97/222902018550)
 
 ## 구현 요구 기능과 구현 여부
