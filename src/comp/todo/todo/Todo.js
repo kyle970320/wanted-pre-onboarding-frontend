@@ -11,7 +11,7 @@ const CompToDoList = () => {
   let { stateGetList, setGetList } = useContext(AppContext)
   const navigate = useNavigate()
 
-    /* 로그아웃 구현 */
+    /* 로그아웃 구현 , 토큰삭제*/
   const signOutHandler = () => {
     window.localStorage.removeItem('userToken');
     alert('정상적으로 로그아웃 되었습니다');
