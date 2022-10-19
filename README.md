@@ -2,6 +2,15 @@
 :blush:원티드 프리온보딩 프론트엔드 사전과제
 
 해당 레파지토리는 프리온보딩 프론트엔드 코스 사전과제 제출용입니다.
+
+## 프로젝트 실행 방법
+
+```
+$ npm install
+$ npm start
+```
+
+##데모영상
 코드 데모버전은 영상대신 링크로 제출하겠습니다.
 
 [:eyes:데모링크](https://main--vocal-puffpuff-82abf9.netlify.app/)
