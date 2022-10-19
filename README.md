@@ -4,10 +4,9 @@
 해당 레파지토리는 프리온보딩 프론트엔드 코스 사전과제 제출용입니다.
 
 ## 프로젝트 실행 방법
-
 ```
-$ npm install
-$ npm start
+npm install
+npm start
 ```
 
 ## 데모영상
