@@ -10,7 +10,7 @@ $ npm install
 $ npm start
 ```
 
-##데모영상
+## 데모영상
 코드 데모버전은 영상대신 링크로 제출하겠습니다.
 
 [:eyes:데모링크](https://main--vocal-puffpuff-82abf9.netlify.app/)
