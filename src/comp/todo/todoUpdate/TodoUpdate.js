@@ -7,9 +7,9 @@ import style from './todoUpdate.module.css'
  
 const CompUpdate = ({id, stateCompleted ,todo, setUpdate, setCompleted}) => {
   const localStorageToken = window.localStorage.getItem('userToken');
-
-  const {stateInput: todoText, onChange : textChange} = useInput(todo)
-  let {setGetList} = useContext(AppContext)
+  const {stateInput: todoText, onChange : textChange} = useInput(todo);
+  
+  let {setGetList} = useContext(AppContext);
   let navigate = useNavigate()
   const updateHandler = async()=>{ 
     await updateTodo(localStorageToken, id, todoText, stateCompleted);
