@@ -13,6 +13,12 @@
   background-color: #f7ea5e;
   box-shadow: 0 0 30px rgba(0, 0, 0, 0.7);
 }
+.form h2 {
+  margin-bottom: 20px;
+}
+.form h2 img {
+  filter: brightness(90%);
+}
 .form p {
   width: 100%;
 }
@@ -24,6 +30,23 @@
   justify-content: space-between;
   align-items: center;
 }
+.form button {
+  padding: 10px;
+  border: none;
+  border-radius: 20px;
+  transition: background-color 0.4s, scale 0.4s;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
+  background-color: rgba(112, 210, 180, 0.8);
+}
+.form button:disabled:hover {
+  scale: 1;
+  background-color: rgba(112, 210, 180, 0.8);
+  animation: shaker 0.3s;
+}
+.form button:hover {
+  scale: 1.2;
+  background-color: rgba(182, 236, 220, 0.9);
+}
 
 .errorMessage {
   display: block;
@@ -34,4 +57,31 @@
 .title {
   font-size: 1.5rem;
   font-weight: bold;
+}
+
+@keyframes shaker {
+  0% {
+    rotate: -3deg;
+  }
+  15% {
+    rotate: 3deg;
+  }
+  30% {
+    rotate: -3deg;
+  }
+  45% {
+    rotate: 3deg;
+  }
+  60% {
+    rotate: -3deg;
+  }
+  75% {
+    rotate: 3deg;
+  }
+  90% {
+    rotate: -3deg;
+  }
+  100% {
+    rotate: 3deg;
+  }
 }

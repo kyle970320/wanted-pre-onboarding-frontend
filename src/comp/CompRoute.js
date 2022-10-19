@@ -11,14 +11,14 @@ const CompRoute = () => {
   let [stateGetList, setGetList] = useState(null);
   const navigate = useNavigate();
   const localStorageToken = window.localStorage.getItem('userToken');
-  let location = useLocation()
+  let location = useLocation();
 
-  useEffect(()=>{
+  useEffect(()=>{ //처음에 들어올때 로컬스토리지에 토큰정보가 있으면 바로 todo로 넘어감
     if (localStorageToken && (location.pathname === '/')) {
-      navigate('/todo')
+      navigate('/todo');
     } else if (!localStorageToken && (location.pathname === '/todo')) {
       alert('로그인 정보가 없으므로 로그인페이지로 이동합니다.');
-      window.location.href = '/'
+      window.location.href = '/';
     }
   },[])
   return (

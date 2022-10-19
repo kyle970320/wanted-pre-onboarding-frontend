@@ -23,7 +23,7 @@ const CompSignIn = () => {
     }
   }, [])
 
-  /* 유효성검사 */
+  /* 유효성검사(아이디는 @ 이후 문자하나.문자두개 형식으로 검사를 실시)*/
   const fnGetUserLogin = () => {
     if ((emailRegExp.test(userEmail.current.value)) && passwordRegExp.test(userPassword.current.value)) {
       setDisabled('abled');
@@ -36,17 +36,17 @@ const CompSignIn = () => {
     setPasswordError('유효하지 않은 비밀번호입니다.') : setPasswordError(null);
   }
 
-
-  /* 토큰정보 해당 리스트 가져오기 */
   const SignInHandler = async (e) => {
     e.preventDefault();
     let token = await SignIn(userEmail.current.value, userPassword.current.value)
-    setDisabled('');
+    setDisabled(''); //버튼을 잠궈줌
+
     const getList = async (token) => {
       let listItem = await getTodos(token);
       setGetList(listItem);
     }
     getList(token);
+    
     if (token) {
       navigate('/todo');
     } else {
@@ -62,7 +62,9 @@ const CompSignIn = () => {
 
   return (
     <form className={style.form}>
-      <h2 className={style.title}>todoList</h2>
+      <h2 className={style.title}>
+        <img src={`${process.env.PUBLIC_URL}/img/title.png`} alt="" />
+      </h2>
       <p>
         <label htmlFor='user-email'>이메일</label>
         <input id='user-email' type="email" ref={userEmail} onChange={fnGetUserLogin} />

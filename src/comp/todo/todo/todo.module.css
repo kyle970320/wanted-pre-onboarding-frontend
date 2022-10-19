@@ -27,6 +27,21 @@
   justify-content: space-around;
   align-items: center;
 }
+.todo .addInput input {
+  background-color: white;
+  border: none;
+}
+.todo .addInput button {
+  padding: 10px;
+  border: none;
+  background-color: lightgoldenrodyellow;
+  border-radius: 15px;
+  box-shadow: 0 0 10px rgba(255, 255, 0, 0.7);
+  transition: scale 0.5s;
+}
+.todo .addInput button:hover {
+  scale: 1.1;
+}
 .todo .signOut {
   position: absolute;
   top: 0px;

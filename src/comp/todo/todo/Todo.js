@@ -8,14 +8,14 @@ import style from './todo.module.css'
 
 const CompToDoList = () => {
   const localStorageToken = window.localStorage.getItem('userToken');
-  let { stateGetList, setGetList } = useContext(AppContext)
-  const navigate = useNavigate()
+  let { stateGetList, setGetList } = useContext(AppContext);
+  const navigate = useNavigate();
 
-    /* 로그아웃 구현 , 토큰삭제*/
+    /* 로그아웃 구현(로컬스토리지를 삭제한 후, 로그인 페이지로 이동)*/
   const signOutHandler = () => {
     window.localStorage.removeItem('userToken');
     alert('정상적으로 로그아웃 되었습니다');
-    navigate('/')
+    navigate('/');
   }
 
     /* 비동기 처리를 위해 useEffect 안에서 함수 선언 후 바로 호출 */
@@ -24,7 +24,7 @@ const CompToDoList = () => {
       let listItem = await getTodos(token);
       setGetList(listItem);
     }
-    getList(localStorageToken)
+    getList(localStorageToken);
   }, []);
 
   return (
@@ -39,7 +39,7 @@ const CompToDoList = () => {
       </p>
       <img className={style.line} src={`${process.env.PUBLIC_URL}/img/line-dashed.png`} alt="" />
       <ul>
-        {//비어있거나 오류가 들어온 error가 들어온 값은 map이 실행되지 않음
+        {//비어있거나 error가 들어온 값(객체로 들어옴)은 map이 실행되지 않음
           Array.isArray(stateGetList) && stateGetList.map((data) => {
             return (
               <TodoListItem data={data} key={data.id} />

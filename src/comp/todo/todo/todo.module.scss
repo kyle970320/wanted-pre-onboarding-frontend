@@ -26,6 +26,21 @@
     display: flex;
     justify-content: space-around;
     align-items: center;
+    input{
+      background-color: white;
+      border: none;
+    }
+      button{
+        padding: 10px;
+        border: none;
+        background-color: lightgoldenrodyellow;
+        border-radius: 15px;
+        box-shadow: 0 0 10px rgba(yellow, 0.7);
+        transition: scale 0.5s;
+        &:hover{
+          scale: 1.1;
+        }
+      }
   }
 
   .signOut{

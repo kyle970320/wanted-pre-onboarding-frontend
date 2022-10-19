@@ -1,5 +1,7 @@
 .update{
+  box-sizing: border-box;
   position: fixed;
+  z-index: 3;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
@@ -8,8 +10,8 @@
   align-items: center;
   width: 500px;
   height: 200px;
-  background-color: #BBB;
-
+  background-color: #fae820;
+  border: 30px solid yellow;
   >*{
     margin-right: 10px;
   }
@@ -23,6 +25,22 @@
       &:checked{
         background-color: lightblue;
       }
+  }
+  button{
+    padding: 5px;
+    border: none;
+    border-radius: 5px;
+    opacity: 0.3;
+    transition: opacity 0.3s;
+    &:hover{
+      opacity: 1;
+    }
+    &:nth-of-type(1){
+      background-color: lightblue;
+    }
+    &:nth-of-type(2){
+      background-color: lightcoral;
+    }
   }
 }
 .fade{ animation: 0.7s ease-in-out loadEffect1; }

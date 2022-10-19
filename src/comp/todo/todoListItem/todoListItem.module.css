@@ -13,6 +13,22 @@
   width: 30px;
   height: 30px;
 }
+.list > div > button {
+  padding: 5px;
+  border: none;
+  border-radius: 10px;
+  opacity: 0.3;
+  transition: opacity 0.3s;
+}
+.list > div > button:nth-of-type(1) {
+  background-color: lightblue;
+}
+.list > div > button:nth-of-type(2) {
+  background-color: lightcoral;
+}
+.list > div > button:hover {
+  opacity: 1;
+}
 
 .line {
   width: 90%;

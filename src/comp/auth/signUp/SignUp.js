@@ -5,7 +5,7 @@ import { emailRegExp, passwordRegExp } from '../../hooks/regExp';
 import style from '../signin/signIn.module.css'
 
 const CompSignUp = () => {
-  const navigate = useNavigate()
+  const navigate = useNavigate();
   const [stateDisabled, setDisabled] = useState('');
   const [stateEmailError, setEmailError] = useState(null);
   const [statePasswordError, setPasswordError] = useState(null);
@@ -43,7 +43,9 @@ const CompSignUp = () => {
   }
   return (
     <form className={style.form}>
-      <h2 className={style.title}>회원가입</h2>
+      <h2 className={style.title}>
+        <img src={`${process.env.PUBLIC_URL}/img/register.png`} alt="" />
+      </h2>
       <p>
         <label htmlFor='signUp-email'>이메일</label>
         <input id='signUp-email' type="email" ref={signUpEmail} onChange={fnGetUserLogin}/>

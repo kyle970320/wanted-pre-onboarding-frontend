@@ -39,8 +39,8 @@ const CompList = ({ data }) => {
           {todo}
         </p>
         <div>
-          <button onClick={deleteHandler}>삭제하기</button>
           <button onClick={updateHandler}>수정하기</button>
+          <button onClick={deleteHandler}>삭제하기</button>
           {stateUpdate && <TodoUpdate id={id}
             isCompleted={isCompleted}
             todo={todo}

@@ -10,10 +10,10 @@ const CompAdd = () => {
   const localStorageToken = window.localStorage.getItem('userToken');
 
     /* 추가 함수 */
-  const addListHandler = async () => {
-    await createTodo(localStorageToken, addInput.current.value)
-    let allList = await getTodos(localStorageToken)
-    setGetList(allList)
+  const addListHandler = async () => {//api에 할일 추가후 다시 불러오기
+    await createTodo(localStorageToken, addInput.current.value);
+    let allList = await getTodos(localStorageToken);
+    setGetList(allList);
     addInput.current.value = '';
   }
 
