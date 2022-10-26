@@ -3,7 +3,7 @@ import { useLocation, useNavigate } from 'react-router-dom';
 import { AppContext } from '../../CompRoute';
 import { getTodos, SignIn } from '../../../store/fetchApi';
 import style from './signIn.module.css'
-import { emailRegExp, passwordRegExp } from '../../hooks/regExp';
+import { emailRegExp, passwordRegExp } from '../../../hooks/regExp';
 
 const CompSignIn = () => {
   const { setGetList } = useContext(AppContext);
@@ -16,7 +16,7 @@ const CompSignIn = () => {
   let userEmail = useRef();
   let userPassword = useRef();
 
-  useEffect(() => {
+  useEffect(() => {//로그인 후 곧바로 뒤로가기 하면 뒤로가지는 것을 막는 로직
     if (localStorageToken && (location.pathname === '/')) {
       alert('로그인 정보가 감지되었습니다\n todolist로 이동합니다.');
       navigate('/todo');

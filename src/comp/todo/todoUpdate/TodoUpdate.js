@@ -2,7 +2,7 @@ import React ,{ useContext } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { AppContext } from '../../CompRoute';
 import { getTodos, updateTodo } from '../../../store/fetchApi';
-import {useInput} from '../../hooks/useInput';
+import {useInput} from '../../../hooks/useInput';
 import style from './todoUpdate.module.css'
  
 const CompUpdate = ({id, stateCompleted ,todo, setUpdate, setCompleted}) => {

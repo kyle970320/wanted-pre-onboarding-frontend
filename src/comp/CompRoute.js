@@ -18,7 +18,7 @@ const CompRoute = () => {
       navigate('/todo');
     } else if (!localStorageToken && (location.pathname === '/todo')) {
       alert('로그인 정보가 없으므로 로그인페이지로 이동합니다.');
-      window.location.href = '/';
+      navigate('/');
     }
   },[])
   return (

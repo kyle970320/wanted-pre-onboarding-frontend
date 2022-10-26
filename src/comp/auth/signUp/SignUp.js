@@ -1,7 +1,7 @@
 import React, { useState, useRef } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { SignUp } from '../../../store/fetchApi';
-import { emailRegExp, passwordRegExp } from '../../hooks/regExp';
+import { emailRegExp, passwordRegExp } from '../../../hooks/regExp';
 import style from '../signin/signIn.module.css'
 
 const CompSignUp = () => {
